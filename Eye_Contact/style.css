@@ -1,0 +1,69 @@
+:root {
+    --size: 10vmin;
+    --on: #047ddf , rgb(0,15,43);
+    --off: #313132;
+    --tr: all 0.25s ease 0s;
+
+}
+*{
+    box-sizing: border-box;
+    transition: var(--tr);
+}
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #101010, #292a2a);
+}
+.toggle{
+    position: relative;
+    width: calc(var(--size)*3);
+    height: calc(var(--size)*3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+     display: none;
+}
+label[for=btn]{
+    position: absolute;
+    width: calc(var(--size)*4);
+    height: calc(var(--size)*2);
+    background: var(--off);
+    border-radius: var(--size);
+    box-shadow: 0 0px calc(var(--size)/10) calc(var(--size)/50) rgba(0, 0, 0, 0.5333),
+                0 -4px calc(var(--size)/5) calc(var(--size)/50) #000c;
+
+}
+.track{
+ position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--size);
+}
+.track::before{
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    left: -100%;
+    transition: var(--tr);
+    background: linear-gradient(90deg, var(--on) 50%, var(--off) 10%);
+    animation: move-color 3s ease 0s 1;
+}
+btn:checked + label .track::before{
+    left: 0%;
+}
+.thumb{
+    position:absolute;
+    width: calc(calc(var(--size)*2) - calc(var(--size)/5));
+    height: calc(calc(var(--size)*2) - calc(var(--size)/5));
+    top: calc(calc(var(--size)/10) + calc(var(--size)/200));
+    left: calc(calc(var(--size)/10) + calc(var(--size)/100));
+}

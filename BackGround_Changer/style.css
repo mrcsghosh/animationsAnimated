@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #ffff;
+    color: #212121;
+    text-align: center;
+}
+h1{
+    font-size: 4vw;
+}
+h2{
+    font-size: 3vw;
+}
+.button{
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border: 1px solid skyblue;
+    display: inline-block;
+}
+#grey{
+    background-color: gray;
+}
+#green{
+    background-color: green;
+}
+#yellow{
+    background-color: yellow;
+}
+#blue{
+    background-color: blue;
+}
